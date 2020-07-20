@@ -1,0 +1,910 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0CCA633CE8595FF0AABEE7ED /* libPods-MacTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD40336FE3D1719D9FF6BF43 /* libPods-MacTest.a */; };
+		DB162306243CAF00006B550C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB162305243CAF00006B550C /* AppDelegate.m */; };
+		DB162309243CAF00006B550C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB162308243CAF00006B550C /* ViewController.m */; };
+		DB16230B243CAF02006B550C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB16230A243CAF02006B550C /* Assets.xcassets */; };
+		DB16230E243CAF02006B550C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB16230C243CAF02006B550C /* Main.storyboard */; };
+		DB162311243CAF02006B550C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB162310243CAF02006B550C /* main.m */; };
+		DB16231C243CAF02006B550C /* MacTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB16231B243CAF02006B550C /* MacTestTests.m */; };
+		DB162327243CAF02006B550C /* MacTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB162326243CAF02006B550C /* MacTestUITests.m */; };
+		DB162335243CBB0F006B550C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB162334243CBB0F006B550C /* AudioToolbox.framework */; };
+		DB162337243CBB18006B550C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB162336243CBB18006B550C /* CoreGraphics.framework */; };
+		DB162339243CBB1F006B550C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB162338243CBB1F006B550C /* CoreMedia.framework */; };
+		DB16233B243CBB2B006B550C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB16233A243CBB2B006B550C /* OpenGL.framework */; };
+		DB16233D243CBB37006B550C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB16233C243CBB37006B550C /* QuartzCore.framework */; };
+		DB16233F243CBB3D006B550C /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB16233E243CBB3D006B550C /* OpenAL.framework */; };
+		DB162341243CBB45006B550C /* MediaToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB162340243CBB45006B550C /* MediaToolbox.framework */; };
+		DB162343243CBB4F006B550C /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB162342243CBB4F006B550C /* VideoToolbox.framework */; };
+		DB162345243CBB59006B550C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB162344243CBB59006B550C /* Accelerate.framework */; };
+		DB162349243CBB8D006B550C /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DB162347243CBB68006B550C /* libbz2.1.0.tbd */; };
+		DB16234A243CBBA2006B550C /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DB162346243CBB61006B550C /* libiconv.2.4.0.tbd */; };
+		DB16234B243CBBAB006B550C /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DB162347243CBB68006B550C /* libbz2.1.0.tbd */; };
+		DB16234C243CBBB6006B550C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DB162348243CBB70006B550C /* libiconv.tbd */; };
+		DB16234E243CBC21006B550C /* VideoDecodeAcceleration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB16234D243CBC21006B550C /* VideoDecodeAcceleration.framework */; };
+		DB162350243CBC2A006B550C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB16234F243CBC2A006B550C /* CoreVideo.framework */; };
+		DB162352243CBC30006B550C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB162351243CBC30006B550C /* CoreFoundation.framework */; };
+		DB162354243CBC8D006B550C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DB162353243CBC83006B550C /* libz.tbd */; };
+		DB319FA8243F251A00E94B94 /* MAPeelAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB319FA6243F251A00E94B94 /* MAPeelAudioViewController.m */; };
+		DB319FA9243F251A00E94B94 /* MAPeelAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB319FA7243F251A00E94B94 /* MAPeelAudioViewController.xib */; };
+		DB319FAE243F262400E94B94 /* MAPeelAudioWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB319FAC243F262400E94B94 /* MAPeelAudioWindowController.m */; };
+		DB319FAF243F262400E94B94 /* MAPeelAudioWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB319FAD243F262400E94B94 /* MAPeelAudioWindowController.xib */; };
+		DB319FB2243F28EE00E94B94 /* MAWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB319FB1243F28EE00E94B94 /* MAWindowManager.m */; };
+		DB319FC4243F7F2A00E94B94 /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DB319FC3243F7F2A00E94B94 /* test.mp4 */; };
+		DB319FC6243F83FE00E94B94 /* test2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DB319FC5243F83FE00E94B94 /* test2.mp4 */; };
+		DB319FCE244075D900E94B94 /* MAPeelVideoWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB319FCC244075D900E94B94 /* MAPeelVideoWindowController.m */; };
+		DB319FCF244075D900E94B94 /* MAPeelVideoWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB319FCD244075D900E94B94 /* MAPeelVideoWindowController.xib */; };
+		DB3A2F7F2452FC72009FAEB0 /* MACheckWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3A2F7D2452FC72009FAEB0 /* MACheckWindowController.m */; };
+		DB3A2F802452FC72009FAEB0 /* MACheckWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB3A2F7E2452FC72009FAEB0 /* MACheckWindowController.xib */; };
+		DB7F08CF2442BFD10052056E /* MAMyPeelVideoWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB7F08CC2442BFD10052056E /* MAMyPeelVideoWindowController.xib */; };
+		DB7F08D02442BFD10052056E /* MAMyPeelVideoWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7F08CE2442BFD10052056E /* MAMyPeelVideoWindowController.m */; };
+		DB87E30A24C0A662000749D2 /* libndi_embedded.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB87E30924C0A662000749D2 /* libndi_embedded.4.dylib */; };
+		DB8D1AD924C03770004FDD5A /* MANDIWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D1AD724C03770004FDD5A /* MANDIWindowController.m */; };
+		DB8D1ADA24C03770004FDD5A /* MANDIWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB8D1AD824C03770004FDD5A /* MANDIWindowController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB162318243CAF02006B550C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB1622F9243CAF00006B550C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB162300243CAF00006B550C;
+			remoteInfo = MacTest;
+		};
+		DB162323243CAF02006B550C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB1622F9243CAF00006B550C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB162300243CAF00006B550C;
+			remoteInfo = MacTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DB7F08782441BEF60052056E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9A4D06A6F40CA9CBDF42E41C /* Pods-MacTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacTest.release.xcconfig"; path = "Target Support Files/Pods-MacTest/Pods-MacTest.release.xcconfig"; sourceTree = "<group>"; };
+		D1FD3888D0B7C7E2B3697617 /* Pods-MacTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacTest.debug.xcconfig"; path = "Target Support Files/Pods-MacTest/Pods-MacTest.debug.xcconfig"; sourceTree = "<group>"; };
+		DB162301243CAF00006B550C /* MacTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB162304243CAF00006B550C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DB162305243CAF00006B550C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DB162307243CAF00006B550C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DB162308243CAF00006B550C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DB16230A243CAF02006B550C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB16230D243CAF02006B550C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB16230F243CAF02006B550C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB162310243CAF02006B550C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB162312243CAF02006B550C /* MacTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacTest.entitlements; sourceTree = "<group>"; };
+		DB162317243CAF02006B550C /* MacTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB16231B243CAF02006B550C /* MacTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacTestTests.m; sourceTree = "<group>"; };
+		DB16231D243CAF02006B550C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB162322243CAF02006B550C /* MacTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB162326243CAF02006B550C /* MacTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacTestUITests.m; sourceTree = "<group>"; };
+		DB162328243CAF02006B550C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB162334243CBB0F006B550C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DB162336243CBB18006B550C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DB162338243CBB1F006B550C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		DB16233A243CBB2B006B550C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		DB16233C243CBB37006B550C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DB16233E243CBB3D006B550C /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		DB162340243CBB45006B550C /* MediaToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaToolbox.framework; path = System/Library/Frameworks/MediaToolbox.framework; sourceTree = SDKROOT; };
+		DB162342243CBB4F006B550C /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		DB162344243CBB59006B550C /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		DB162346243CBB61006B550C /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
+		DB162347243CBB68006B550C /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
+		DB162348243CBB70006B550C /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		DB16234D243CBC21006B550C /* VideoDecodeAcceleration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoDecodeAcceleration.framework; path = System/Library/Frameworks/VideoDecodeAcceleration.framework; sourceTree = SDKROOT; };
+		DB16234F243CBC2A006B550C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		DB162351243CBC30006B550C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		DB162353243CBC83006B550C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		DB319FA5243F251A00E94B94 /* MAPeelAudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAPeelAudioViewController.h; sourceTree = "<group>"; };
+		DB319FA6243F251A00E94B94 /* MAPeelAudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAPeelAudioViewController.m; sourceTree = "<group>"; };
+		DB319FA7243F251A00E94B94 /* MAPeelAudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAPeelAudioViewController.xib; sourceTree = "<group>"; };
+		DB319FAB243F262400E94B94 /* MAPeelAudioWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAPeelAudioWindowController.h; sourceTree = "<group>"; };
+		DB319FAC243F262400E94B94 /* MAPeelAudioWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAPeelAudioWindowController.m; sourceTree = "<group>"; };
+		DB319FAD243F262400E94B94 /* MAPeelAudioWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAPeelAudioWindowController.xib; sourceTree = "<group>"; };
+		DB319FB0243F28EE00E94B94 /* MAWindowManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAWindowManager.h; sourceTree = "<group>"; };
+		DB319FB1243F28EE00E94B94 /* MAWindowManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAWindowManager.m; sourceTree = "<group>"; };
+		DB319FC3243F7F2A00E94B94 /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
+		DB319FC5243F83FE00E94B94 /* test2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.mp4; sourceTree = "<group>"; };
+		DB319FCB244075D900E94B94 /* MAPeelVideoWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAPeelVideoWindowController.h; sourceTree = "<group>"; };
+		DB319FCC244075D900E94B94 /* MAPeelVideoWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAPeelVideoWindowController.m; sourceTree = "<group>"; };
+		DB319FCD244075D900E94B94 /* MAPeelVideoWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAPeelVideoWindowController.xib; sourceTree = "<group>"; };
+		DB3A2F7C2452FC72009FAEB0 /* MACheckWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MACheckWindowController.h; sourceTree = "<group>"; };
+		DB3A2F7D2452FC72009FAEB0 /* MACheckWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MACheckWindowController.m; sourceTree = "<group>"; };
+		DB3A2F7E2452FC72009FAEB0 /* MACheckWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MACheckWindowController.xib; sourceTree = "<group>"; };
+		DB7F08CC2442BFD10052056E /* MAMyPeelVideoWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MAMyPeelVideoWindowController.xib; sourceTree = "<group>"; };
+		DB7F08CD2442BFD10052056E /* MAMyPeelVideoWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAMyPeelVideoWindowController.h; sourceTree = "<group>"; };
+		DB7F08CE2442BFD10052056E /* MAMyPeelVideoWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAMyPeelVideoWindowController.m; sourceTree = "<group>"; };
+		DB87E30924C0A662000749D2 /* libndi_embedded.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libndi_embedded.4.dylib; sourceTree = "<group>"; };
+		DB8D1AD624C03770004FDD5A /* MANDIWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MANDIWindowController.h; sourceTree = "<group>"; };
+		DB8D1AD724C03770004FDD5A /* MANDIWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MANDIWindowController.m; sourceTree = "<group>"; };
+		DB8D1AD824C03770004FDD5A /* MANDIWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MANDIWindowController.xib; sourceTree = "<group>"; };
+		DB8D1ADD24C089AD004FDD5A /* Processing.NDI.compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.compat.h; sourceTree = "<group>"; };
+		DB8D1ADE24C089AD004FDD5A /* Processing.NDI.utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.utilities.h; sourceTree = "<group>"; };
+		DB8D1ADF24C089AD004FDD5A /* Processing.NDI.Recv.ex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.Recv.ex.h; sourceTree = "<group>"; };
+		DB8D1AE024C089AD004FDD5A /* Processing.NDI.deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.deprecated.h; sourceTree = "<group>"; };
+		DB8D1AE124C089AD004FDD5A /* Processing.NDI.Routing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.Routing.h; sourceTree = "<group>"; };
+		DB8D1AE224C089AD004FDD5A /* Processing.NDI.Embedded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.Embedded.h; sourceTree = "<group>"; };
+		DB8D1AE324C089AD004FDD5A /* Processing.NDI.Send.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.Send.h; sourceTree = "<group>"; };
+		DB8D1AE424C089AD004FDD5A /* Processing.NDI.structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.structs.h; sourceTree = "<group>"; };
+		DB8D1AE524C089AD004FDD5A /* Processing.NDI.Lib.cplusplus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.Lib.cplusplus.h; sourceTree = "<group>"; };
+		DB8D1AE624C089AD004FDD5A /* Processing.NDI.FrameSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.FrameSync.h; sourceTree = "<group>"; };
+		DB8D1AE724C089AD004FDD5A /* Processing.NDI.Find.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.Find.h; sourceTree = "<group>"; };
+		DB8D1AE824C089AD004FDD5A /* Processing.NDI.DynamicLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.DynamicLoad.h; sourceTree = "<group>"; };
+		DB8D1AE924C089AD004FDD5A /* Processing.NDI.Recv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.Recv.h; sourceTree = "<group>"; };
+		DB8D1AEA24C089AD004FDD5A /* Processing.NDI.Lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.Lib.h; sourceTree = "<group>"; };
+		FD40336FE3D1719D9FF6BF43 /* libPods-MacTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB1622FE243CAF00006B550C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB16233F243CBB3D006B550C /* OpenAL.framework in Frameworks */,
+				DB162341243CBB45006B550C /* MediaToolbox.framework in Frameworks */,
+				DB162343243CBB4F006B550C /* VideoToolbox.framework in Frameworks */,
+				DB162339243CBB1F006B550C /* CoreMedia.framework in Frameworks */,
+				DB16234C243CBBB6006B550C /* libiconv.tbd in Frameworks */,
+				DB87E30A24C0A662000749D2 /* libndi_embedded.4.dylib in Frameworks */,
+				DB162337243CBB18006B550C /* CoreGraphics.framework in Frameworks */,
+				DB16233D243CBB37006B550C /* QuartzCore.framework in Frameworks */,
+				DB162354243CBC8D006B550C /* libz.tbd in Frameworks */,
+				DB162349243CBB8D006B550C /* libbz2.1.0.tbd in Frameworks */,
+				0CCA633CE8595FF0AABEE7ED /* libPods-MacTest.a in Frameworks */,
+				DB16234E243CBC21006B550C /* VideoDecodeAcceleration.framework in Frameworks */,
+				DB162352243CBC30006B550C /* CoreFoundation.framework in Frameworks */,
+				DB16234A243CBBA2006B550C /* libiconv.2.4.0.tbd in Frameworks */,
+				DB162345243CBB59006B550C /* Accelerate.framework in Frameworks */,
+				DB16233B243CBB2B006B550C /* OpenGL.framework in Frameworks */,
+				DB16234B243CBBAB006B550C /* libbz2.1.0.tbd in Frameworks */,
+				DB162335243CBB0F006B550C /* AudioToolbox.framework in Frameworks */,
+				DB162350243CBC2A006B550C /* CoreVideo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB162314243CAF02006B550C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB16231F243CAF02006B550C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		633750BBA087F20F2B8E0523 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D1FD3888D0B7C7E2B3697617 /* Pods-MacTest.debug.xcconfig */,
+				9A4D06A6F40CA9CBDF42E41C /* Pods-MacTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7A9BF18115AFDA1F0BB9032A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB162353243CBC83006B550C /* libz.tbd */,
+				DB162351243CBC30006B550C /* CoreFoundation.framework */,
+				DB16234F243CBC2A006B550C /* CoreVideo.framework */,
+				DB16234D243CBC21006B550C /* VideoDecodeAcceleration.framework */,
+				DB162348243CBB70006B550C /* libiconv.tbd */,
+				DB162347243CBB68006B550C /* libbz2.1.0.tbd */,
+				DB162346243CBB61006B550C /* libiconv.2.4.0.tbd */,
+				DB162344243CBB59006B550C /* Accelerate.framework */,
+				DB162342243CBB4F006B550C /* VideoToolbox.framework */,
+				DB162340243CBB45006B550C /* MediaToolbox.framework */,
+				DB16233E243CBB3D006B550C /* OpenAL.framework */,
+				DB16233C243CBB37006B550C /* QuartzCore.framework */,
+				DB16233A243CBB2B006B550C /* OpenGL.framework */,
+				DB162338243CBB1F006B550C /* CoreMedia.framework */,
+				DB162336243CBB18006B550C /* CoreGraphics.framework */,
+				DB162334243CBB0F006B550C /* AudioToolbox.framework */,
+				FD40336FE3D1719D9FF6BF43 /* libPods-MacTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB1622F8243CAF00006B550C = {
+			isa = PBXGroup;
+			children = (
+				DB8D1ADB24C089AD004FDD5A /* ndi_ios */,
+				DB7F08692441BEA40052056E /* CGPlayer */,
+				DB162303243CAF00006B550C /* MacTest */,
+				DB16231A243CAF02006B550C /* MacTestTests */,
+				DB162325243CAF02006B550C /* MacTestUITests */,
+				DB162302243CAF00006B550C /* Products */,
+				633750BBA087F20F2B8E0523 /* Pods */,
+				7A9BF18115AFDA1F0BB9032A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DB162302243CAF00006B550C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB162301243CAF00006B550C /* MacTest.app */,
+				DB162317243CAF02006B550C /* MacTestTests.xctest */,
+				DB162322243CAF02006B550C /* MacTestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB162303243CAF00006B550C /* MacTest */ = {
+			isa = PBXGroup;
+			children = (
+				DB8D1AD524C0373C004FDD5A /* NDI */,
+				DB3A2F782452FAAA009FAEB0 /* Check */,
+				DB7F08CB2442BF5A0052056E /* MyPeelVideo */,
+				DB319FBF243F2F7700E94B94 /* Resources */,
+				DB162304243CAF00006B550C /* AppDelegate.h */,
+				DB162305243CAF00006B550C /* AppDelegate.m */,
+				DB162307243CAF00006B550C /* ViewController.h */,
+				DB162308243CAF00006B550C /* ViewController.m */,
+				DB319FB0243F28EE00E94B94 /* MAWindowManager.h */,
+				DB319FB1243F28EE00E94B94 /* MAWindowManager.m */,
+				DB319FC72440758A00E94B94 /* PeelVideo */,
+				DB319FAA243F25F400E94B94 /* PeelAudio */,
+				DB16230A243CAF02006B550C /* Assets.xcassets */,
+				DB16230C243CAF02006B550C /* Main.storyboard */,
+				DB16230F243CAF02006B550C /* Info.plist */,
+				DB162310243CAF02006B550C /* main.m */,
+				DB162312243CAF02006B550C /* MacTest.entitlements */,
+			);
+			path = MacTest;
+			sourceTree = "<group>";
+		};
+		DB16231A243CAF02006B550C /* MacTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB16231B243CAF02006B550C /* MacTestTests.m */,
+				DB16231D243CAF02006B550C /* Info.plist */,
+			);
+			path = MacTestTests;
+			sourceTree = "<group>";
+		};
+		DB162325243CAF02006B550C /* MacTestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DB162326243CAF02006B550C /* MacTestUITests.m */,
+				DB162328243CAF02006B550C /* Info.plist */,
+			);
+			path = MacTestUITests;
+			sourceTree = "<group>";
+		};
+		DB319FAA243F25F400E94B94 /* PeelAudio */ = {
+			isa = PBXGroup;
+			children = (
+				DB319FA5243F251A00E94B94 /* MAPeelAudioViewController.h */,
+				DB319FA6243F251A00E94B94 /* MAPeelAudioViewController.m */,
+				DB319FA7243F251A00E94B94 /* MAPeelAudioViewController.xib */,
+				DB319FAB243F262400E94B94 /* MAPeelAudioWindowController.h */,
+				DB319FAC243F262400E94B94 /* MAPeelAudioWindowController.m */,
+				DB319FAD243F262400E94B94 /* MAPeelAudioWindowController.xib */,
+			);
+			path = PeelAudio;
+			sourceTree = "<group>";
+		};
+		DB319FBF243F2F7700E94B94 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DB319FC3243F7F2A00E94B94 /* test.mp4 */,
+				DB319FC5243F83FE00E94B94 /* test2.mp4 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DB319FC72440758A00E94B94 /* PeelVideo */ = {
+			isa = PBXGroup;
+			children = (
+				DB319FCB244075D900E94B94 /* MAPeelVideoWindowController.h */,
+				DB319FCC244075D900E94B94 /* MAPeelVideoWindowController.m */,
+				DB319FCD244075D900E94B94 /* MAPeelVideoWindowController.xib */,
+			);
+			path = PeelVideo;
+			sourceTree = "<group>";
+		};
+		DB3A2F782452FAAA009FAEB0 /* Check */ = {
+			isa = PBXGroup;
+			children = (
+				DB3A2F7C2452FC72009FAEB0 /* MACheckWindowController.h */,
+				DB3A2F7D2452FC72009FAEB0 /* MACheckWindowController.m */,
+				DB3A2F7E2452FC72009FAEB0 /* MACheckWindowController.xib */,
+			);
+			path = Check;
+			sourceTree = "<group>";
+		};
+		DB7F08692441BEA40052056E /* CGPlayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CGPlayer;
+			sourceTree = "<group>";
+		};
+		DB7F08CB2442BF5A0052056E /* MyPeelVideo */ = {
+			isa = PBXGroup;
+			children = (
+				DB7F08CD2442BFD10052056E /* MAMyPeelVideoWindowController.h */,
+				DB7F08CE2442BFD10052056E /* MAMyPeelVideoWindowController.m */,
+				DB7F08CC2442BFD10052056E /* MAMyPeelVideoWindowController.xib */,
+			);
+			path = MyPeelVideo;
+			sourceTree = "<group>";
+		};
+		DB8D1AD524C0373C004FDD5A /* NDI */ = {
+			isa = PBXGroup;
+			children = (
+				DB8D1AD624C03770004FDD5A /* MANDIWindowController.h */,
+				DB8D1AD724C03770004FDD5A /* MANDIWindowController.m */,
+				DB8D1AD824C03770004FDD5A /* MANDIWindowController.xib */,
+			);
+			path = NDI;
+			sourceTree = "<group>";
+		};
+		DB8D1ADB24C089AD004FDD5A /* ndi_ios */ = {
+			isa = PBXGroup;
+			children = (
+				DB8D1ADC24C089AD004FDD5A /* include */,
+				DB8D1AEB24C089AD004FDD5A /* lib */,
+			);
+			name = ndi_ios;
+			path = MacTest/ndi_ios;
+			sourceTree = "<group>";
+		};
+		DB8D1ADC24C089AD004FDD5A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				DB8D1ADD24C089AD004FDD5A /* Processing.NDI.compat.h */,
+				DB8D1ADE24C089AD004FDD5A /* Processing.NDI.utilities.h */,
+				DB8D1ADF24C089AD004FDD5A /* Processing.NDI.Recv.ex.h */,
+				DB8D1AE024C089AD004FDD5A /* Processing.NDI.deprecated.h */,
+				DB8D1AE124C089AD004FDD5A /* Processing.NDI.Routing.h */,
+				DB8D1AE224C089AD004FDD5A /* Processing.NDI.Embedded.h */,
+				DB8D1AE324C089AD004FDD5A /* Processing.NDI.Send.h */,
+				DB8D1AE424C089AD004FDD5A /* Processing.NDI.structs.h */,
+				DB8D1AE524C089AD004FDD5A /* Processing.NDI.Lib.cplusplus.h */,
+				DB8D1AE624C089AD004FDD5A /* Processing.NDI.FrameSync.h */,
+				DB8D1AE724C089AD004FDD5A /* Processing.NDI.Find.h */,
+				DB8D1AE824C089AD004FDD5A /* Processing.NDI.DynamicLoad.h */,
+				DB8D1AE924C089AD004FDD5A /* Processing.NDI.Recv.h */,
+				DB8D1AEA24C089AD004FDD5A /* Processing.NDI.Lib.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		DB8D1AEB24C089AD004FDD5A /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				DB87E30924C0A662000749D2 /* libndi_embedded.4.dylib */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB162300243CAF00006B550C /* MacTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB16232B243CAF02006B550C /* Build configuration list for PBXNativeTarget "MacTest" */;
+			buildPhases = (
+				6385ACF3F88BFC3616588A46 /* [CP] Check Pods Manifest.lock */,
+				DB1622FD243CAF00006B550C /* Sources */,
+				DB1622FE243CAF00006B550C /* Frameworks */,
+				DB1622FF243CAF00006B550C /* Resources */,
+				DB7F08782441BEF60052056E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacTest;
+			productName = MacTest;
+			productReference = DB162301243CAF00006B550C /* MacTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB162316243CAF02006B550C /* MacTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB16232E243CAF02006B550C /* Build configuration list for PBXNativeTarget "MacTestTests" */;
+			buildPhases = (
+				DB162313243CAF02006B550C /* Sources */,
+				DB162314243CAF02006B550C /* Frameworks */,
+				DB162315243CAF02006B550C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB162319243CAF02006B550C /* PBXTargetDependency */,
+			);
+			name = MacTestTests;
+			productName = MacTestTests;
+			productReference = DB162317243CAF02006B550C /* MacTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DB162321243CAF02006B550C /* MacTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB162331243CAF02006B550C /* Build configuration list for PBXNativeTarget "MacTestUITests" */;
+			buildPhases = (
+				DB16231E243CAF02006B550C /* Sources */,
+				DB16231F243CAF02006B550C /* Frameworks */,
+				DB162320243CAF02006B550C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB162324243CAF02006B550C /* PBXTargetDependency */,
+			);
+			name = MacTestUITests;
+			productName = MacTestUITests;
+			productReference = DB162322243CAF02006B550C /* MacTestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB1622F9243CAF00006B550C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "马英伦";
+				TargetAttributes = {
+					DB162300243CAF00006B550C = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					DB162316243CAF02006B550C = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = DB162300243CAF00006B550C;
+					};
+					DB162321243CAF02006B550C = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = DB162300243CAF00006B550C;
+					};
+				};
+			};
+			buildConfigurationList = DB1622FC243CAF00006B550C /* Build configuration list for PBXProject "MacTest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB1622F8243CAF00006B550C;
+			productRefGroup = DB162302243CAF00006B550C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB162300243CAF00006B550C /* MacTest */,
+				DB162316243CAF02006B550C /* MacTestTests */,
+				DB162321243CAF02006B550C /* MacTestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB1622FF243CAF00006B550C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB3A2F802452FC72009FAEB0 /* MACheckWindowController.xib in Resources */,
+				DB7F08CF2442BFD10052056E /* MAMyPeelVideoWindowController.xib in Resources */,
+				DB16230B243CAF02006B550C /* Assets.xcassets in Resources */,
+				DB16230E243CAF02006B550C /* Main.storyboard in Resources */,
+				DB319FC6243F83FE00E94B94 /* test2.mp4 in Resources */,
+				DB319FCF244075D900E94B94 /* MAPeelVideoWindowController.xib in Resources */,
+				DB319FAF243F262400E94B94 /* MAPeelAudioWindowController.xib in Resources */,
+				DB319FC4243F7F2A00E94B94 /* test.mp4 in Resources */,
+				DB319FA9243F251A00E94B94 /* MAPeelAudioViewController.xib in Resources */,
+				DB8D1ADA24C03770004FDD5A /* MANDIWindowController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB162315243CAF02006B550C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB162320243CAF02006B550C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6385ACF3F88BFC3616588A46 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MacTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB1622FD243CAF00006B550C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB319FAE243F262400E94B94 /* MAPeelAudioWindowController.m in Sources */,
+				DB319FB2243F28EE00E94B94 /* MAWindowManager.m in Sources */,
+				DB7F08D02442BFD10052056E /* MAMyPeelVideoWindowController.m in Sources */,
+				DB319FCE244075D900E94B94 /* MAPeelVideoWindowController.m in Sources */,
+				DB3A2F7F2452FC72009FAEB0 /* MACheckWindowController.m in Sources */,
+				DB8D1AD924C03770004FDD5A /* MANDIWindowController.m in Sources */,
+				DB162309243CAF00006B550C /* ViewController.m in Sources */,
+				DB162311243CAF02006B550C /* main.m in Sources */,
+				DB162306243CAF00006B550C /* AppDelegate.m in Sources */,
+				DB319FA8243F251A00E94B94 /* MAPeelAudioViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB162313243CAF02006B550C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB16231C243CAF02006B550C /* MacTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB16231E243CAF02006B550C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB162327243CAF02006B550C /* MacTestUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB162319243CAF02006B550C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB162300243CAF00006B550C /* MacTest */;
+			targetProxy = DB162318243CAF02006B550C /* PBXContainerItemProxy */;
+		};
+		DB162324243CAF02006B550C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB162300243CAF00006B550C /* MacTest */;
+			targetProxy = DB162323243CAF02006B550C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB16230C243CAF02006B550C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB16230D243CAF02006B550C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB162329243CAF02006B550C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DB16232A243CAF02006B550C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DB16232C243CAF02006B550C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1FD3888D0B7C7E2B3697617 /* Pods-MacTest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacTest/MacTest.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MacTest/Resources",
+				);
+				INFOPLIST_FILE = MacTest/Info.plist;
+				LD_DYLIB_INSTALL_NAME = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"/Library/NDI\\ Embedded\\ SDK\\ for\\ Apple/lib/x64/",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/ffmpegmac/include\"/**",
+					"$(PROJECT_DIR)/MacTest/ndi_ios/lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MA.MacTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DB16232D243CAF02006B550C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A4D06A6F40CA9CBDF42E41C /* Pods-MacTest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacTest/MacTest.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MacTest/Resources",
+				);
+				INFOPLIST_FILE = MacTest/Info.plist;
+				LD_DYLIB_INSTALL_NAME = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"/Library/NDI\\ Embedded\\ SDK\\ for\\ Apple/lib/x64/",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/ffmpegmac/include\"/**",
+					"$(PROJECT_DIR)/MacTest/ndi_ios/lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MA.MacTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DB16232F243CAF02006B550C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MacTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = MA.MacTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacTest.app/Contents/MacOS/MacTest";
+			};
+			name = Debug;
+		};
+		DB162330243CAF02006B550C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MacTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = MA.MacTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacTest.app/Contents/MacOS/MacTest";
+			};
+			name = Release;
+		};
+		DB162332243CAF02006B550C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MacTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MA.MacTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MacTest;
+			};
+			name = Debug;
+		};
+		DB162333243CAF02006B550C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MacTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MA.MacTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MacTest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB1622FC243CAF00006B550C /* Build configuration list for PBXProject "MacTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB162329243CAF02006B550C /* Debug */,
+				DB16232A243CAF02006B550C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB16232B243CAF02006B550C /* Build configuration list for PBXNativeTarget "MacTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB16232C243CAF02006B550C /* Debug */,
+				DB16232D243CAF02006B550C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB16232E243CAF02006B550C /* Build configuration list for PBXNativeTarget "MacTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB16232F243CAF02006B550C /* Debug */,
+				DB162330243CAF02006B550C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB162331243CAF02006B550C /* Build configuration list for PBXNativeTarget "MacTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB162332243CAF02006B550C /* Debug */,
+				DB162333243CAF02006B550C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB1622F9243CAF00006B550C /* Project object */;
+}

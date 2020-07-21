@@ -60,9 +60,13 @@
         create_params_Send.clock_video = false;
         create_params_Send.clock_audio = false;
         self.pSend = NDIlib_send_create(&create_params_Send);
+        
+        NDIlib_send_send_video_scatter(self.pSend, NULL, NULL);
 
         NSString *filePath = [[NSBundle mainBundle] pathForResource:@"test2" ofType:@"mp4"];
         [self peelVideo:filePath];
+        
+        NDIlib_send_send_video_scatter(self.pSend, NULL, NULL);
         
         NDIlib_send_destroy(self.pSend);
     });
@@ -117,47 +121,38 @@
             
             
             AVPacket *send = av_packet_alloc();
-            av_grow_packet(send, (int)sizeof(NDIlib_compressed_packet_t));
+            
             err = [self copyPacket:send spsPps:spspssPkt.data size:spspssPkt.size];
             if (err < 0) return err;
 
             err = [self copyPacket:send data:buf size:frameDataLength shortHeader:YES];
             if (err < 0) return err;
             
-            NDIlib_video_frame_v2_t frame;
-            frame.FourCC               = (NDIlib_FourCC_video_type_e)NDIlib_FourCC_video_type_ex_H264_highest_bandwidth;
-            frame.xres                 = 1280;
-            frame.yres                 = 720;
-            frame.p_data               = NULL;
-            frame.data_size_in_bytes   = 0;
-//            frame.frame_rate_N         = stream_info.frame_rate_n;
-//            frame.frame_rate_D         = stream_info.frame_rate_d;
-            frame.frame_format_type    = NDIlib_frame_format_type_progressive;
-            frame.picture_aspect_ratio = (float)1280 / (float)720;
-            frame.timecode = in->pts;
+            send->pts = in->pts;
+            send->dts = in->dts;
             
-            NDIlib_compressed_packet_t packet;
-            packet.version         = sizeof(NDIlib_compressed_packet_t);
-            packet.pts             = in->pts;
-            packet.dts             = in->dts;
-            packet.flags           = 1;
-            packet.data_size       = spspssPkt.size + frameDataLength;
-            packet.extra_data_size = 0;
-            packet.fourCC          = NDIlib_compressed_FourCC_type_H264;
             
-            memcpy(send->data, (uint8_t*)&packet, (int)sizeof(NDIlib_compressed_packet_t));
-            uint8_t* p_data_blocks[2] = {NULL};
-            p_data_blocks[0] = (uint8_t*)(send->data);
-            int p_data_blocks_size[2] = {0};
-            p_data_blocks_size[0] = send->size;
-            NDIlib_frame_scatter_t   highQ_scatter = { p_data_blocks,  p_data_blocks_size };
+            [self sendFrameData:send keyFrame:1];
+            
+            av_packet_unref(send);
 
-            NDIlib_send_send_video_scatter_async(self.pSend, &frame, &highQ_scatter);
+        } else if (pkt_type == 1) {
             
+            err = [self copyPacket:out data:buf size:frameDataLength shortHeader:NO];
+            if (err < 0) return err;
             
+            AVPacket *send = av_packet_alloc();
             
-//            av_packet_unref(send);
-
+            err = [self copyPacket:send data:buf size:frameDataLength shortHeader:YES];
+            if (err < 0) return err;
+            
+            send->pts = in->pts;
+            send->dts = in->dts;
+            
+            [self sendFrameData:send keyFrame:0];
+            
+            av_packet_unref(send);
+            
         } else {
             err = [self copyPacket:out data:buf size:frameDataLength shortHeader:NO];
             if (err < 0) return err;
@@ -188,6 +183,44 @@
 //    fmt_ctx->streams[in->stream_index]->codecpar->extradata
 
     return 0;
+}
+
+- (void)sendFrameData:(AVPacket *)framePkt keyFrame:(int)keyframe
+{
+    NDIlib_video_frame_v2_t frame;
+    frame.FourCC               = (NDIlib_FourCC_video_type_e)NDIlib_FourCC_video_type_ex_H264_highest_bandwidth;
+    frame.xres                 = 1280;
+    frame.yres                 = 720;
+    frame.p_data               = NULL;
+    frame.data_size_in_bytes   = 0;
+    frame.frame_format_type    = NDIlib_frame_format_type_progressive;
+    frame.picture_aspect_ratio = (float)1280 / (float)720;
+    frame.timecode = framePkt->pts;
+    
+    NDIlib_compressed_packet_t packet;
+    packet.version         = sizeof(NDIlib_compressed_packet_t);
+    packet.pts             = framePkt->pts;
+    packet.dts             = framePkt->dts;
+    packet.flags           = keyframe;
+    packet.data_size       = framePkt->size;
+    packet.extra_data_size = 0;
+    packet.fourCC          = NDIlib_compressed_FourCC_type_H264;
+    
+    AVPacket *send = av_packet_alloc();
+    int headerSize = sizeof(NDIlib_compressed_packet_t);
+    av_grow_packet(send, framePkt->size + headerSize);
+    memcpy(send->data, (uint8_t*)&packet, headerSize);
+    memcpy(send->data + headerSize, framePkt->data, framePkt->size);
+    
+    uint8_t* p_data_blocks[2] = {NULL};
+    p_data_blocks[0] = (uint8_t*)(send->data);
+    int p_data_blocks_size[2] = {0};
+    p_data_blocks_size[0] = send->size;
+    NDIlib_frame_scatter_t   highQ_scatter = { p_data_blocks,  p_data_blocks_size };
+    
+    NDIlib_send_send_video_scatter(self.pSend, &frame, &highQ_scatter);
+    
+    av_packet_unref(send);
 }
 
 - (int)h264_extradata_to_annexb:(const uint8_t *)codec_extradata extraDataSize:(const int)codec_extradata_size out_extradata:(AVPacket *)out_extradata pading:(int)padding
@@ -274,7 +307,8 @@
 
 - (int)peelVideo:(NSString*)filePath
 {
-
+    NSString *dicPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"Test"];
+    [[NSFileManager defaultManager] createDirectoryAtPath:dicPath withIntermediateDirectories:YES attributes:nil error:nil];
     NSString *targetPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"Test/test2.h264"];
 
     int err_code;

@@ -23,8 +23,8 @@
     av_register_all();
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"test2" ofType:@"mp4"];
-//    [self peelAudio:filePath];
-    [self peelMp4Audio:filePath];
+    [self peelAudio:filePath];
+//    [self peelMp4Audio:filePath];
     
 //    avformat_alloc_context()
     
@@ -104,6 +104,15 @@ void adts_header(char *szAdtsHeader, int dataLen){
             adts_header(adts_header_buf, pkt.size);
             fwrite(adts_header_buf, 1, 7, dst_fd);
             
+            uint8_t adts[7];
+            memcpy(adts, adts_header_buf, 7);
+            
+            NSLog(@"mayinglun log");
+            for(int i=0;i<7;i++)
+
+            　　printf("0x%.2x ",adts[i]);
+
+            printf("\n");
             
             unsigned long len = fwrite(pkt.data, 1, pkt.size, dst_fd);
             if (len != pkt.size)

@@ -48,6 +48,11 @@
 		DB87E30A24C0A662000749D2 /* libndi_embedded.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB87E30924C0A662000749D2 /* libndi_embedded.4.dylib */; };
 		DB8D1AD924C03770004FDD5A /* MANDIWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D1AD724C03770004FDD5A /* MANDIWindowController.m */; };
 		DB8D1ADA24C03770004FDD5A /* MANDIWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB8D1AD824C03770004FDD5A /* MANDIWindowController.xib */; };
+		DBA1D11524D90F7A002B7F19 /* 阳光电影www.ygdy8.com.战争幽灵.BD.1080p.中英双字幕.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DBA1D11424D90F7A002B7F19 /* 阳光电影www.ygdy8.com.战争幽灵.BD.1080p.中英双字幕.mp4 */; };
+		DBCBFAA724D15D72004E7369 /* MANDIReciverWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCBFAA524D15D72004E7369 /* MANDIReciverWindowController.m */; };
+		DBCBFAA824D15D72004E7369 /* MANDIReciverWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBCBFAA624D15D72004E7369 /* MANDIReciverWindowController.xib */; };
+		DBE1B2AF24D02D9900CF89FA /* MASendH264DataWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE1B2AD24D02D9900CF89FA /* MASendH264DataWindowController.m */; };
+		DBE1B2B024D02D9900CF89FA /* MASendH264DataWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBE1B2AE24D02D9900CF89FA /* MASendH264DataWindowController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +157,13 @@
 		DB8D1AE824C089AD004FDD5A /* Processing.NDI.DynamicLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.DynamicLoad.h; sourceTree = "<group>"; };
 		DB8D1AE924C089AD004FDD5A /* Processing.NDI.Recv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.Recv.h; sourceTree = "<group>"; };
 		DB8D1AEA24C089AD004FDD5A /* Processing.NDI.Lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.Lib.h; sourceTree = "<group>"; };
+		DBA1D11424D90F7A002B7F19 /* 阳光电影www.ygdy8.com.战争幽灵.BD.1080p.中英双字幕.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "阳光电影www.ygdy8.com.战争幽灵.BD.1080p.中英双字幕.mp4"; sourceTree = "<group>"; };
+		DBCBFAA424D15D72004E7369 /* MANDIReciverWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MANDIReciverWindowController.h; sourceTree = "<group>"; };
+		DBCBFAA524D15D72004E7369 /* MANDIReciverWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MANDIReciverWindowController.m; sourceTree = "<group>"; };
+		DBCBFAA624D15D72004E7369 /* MANDIReciverWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MANDIReciverWindowController.xib; sourceTree = "<group>"; };
+		DBE1B2AC24D02D9900CF89FA /* MASendH264DataWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASendH264DataWindowController.h; sourceTree = "<group>"; };
+		DBE1B2AD24D02D9900CF89FA /* MASendH264DataWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASendH264DataWindowController.m; sourceTree = "<group>"; };
+		DBE1B2AE24D02D9900CF89FA /* MASendH264DataWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MASendH264DataWindowController.xib; sourceTree = "<group>"; };
 		FD40336FE3D1719D9FF6BF43 /* libPods-MacTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -236,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				DB8D1ADB24C089AD004FDD5A /* ndi_ios */,
-				DB7F08692441BEA40052056E /* CGPlayer */,
 				DB162303243CAF00006B550C /* MacTest */,
 				DB16231A243CAF02006B550C /* MacTestTests */,
 				DB162325243CAF02006B550C /* MacTestUITests */,
@@ -259,6 +270,7 @@
 		DB162303243CAF00006B550C /* MacTest */ = {
 			isa = PBXGroup;
 			children = (
+				DBCBFAA324D15D2D004E7369 /* NDIReciver */,
 				DB8D1AD524C0373C004FDD5A /* NDI */,
 				DB3A2F782452FAAA009FAEB0 /* Check */,
 				DB7F08CB2442BF5A0052056E /* MyPeelVideo */,
@@ -316,6 +328,7 @@
 			children = (
 				DB319FC3243F7F2A00E94B94 /* test.mp4 */,
 				DB319FC5243F83FE00E94B94 /* test2.mp4 */,
+				DBA1D11424D90F7A002B7F19 /* 阳光电影www.ygdy8.com.战争幽灵.BD.1080p.中英双字幕.mp4 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -340,13 +353,6 @@
 			path = Check;
 			sourceTree = "<group>";
 		};
-		DB7F08692441BEA40052056E /* CGPlayer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = CGPlayer;
-			sourceTree = "<group>";
-		};
 		DB7F08CB2442BF5A0052056E /* MyPeelVideo */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +369,9 @@
 				DB8D1AD624C03770004FDD5A /* MANDIWindowController.h */,
 				DB8D1AD724C03770004FDD5A /* MANDIWindowController.m */,
 				DB8D1AD824C03770004FDD5A /* MANDIWindowController.xib */,
+				DBE1B2AC24D02D9900CF89FA /* MASendH264DataWindowController.h */,
+				DBE1B2AD24D02D9900CF89FA /* MASendH264DataWindowController.m */,
+				DBE1B2AE24D02D9900CF89FA /* MASendH264DataWindowController.xib */,
 			);
 			path = NDI;
 			sourceTree = "<group>";
@@ -404,6 +413,16 @@
 				DB87E30924C0A662000749D2 /* libndi_embedded.4.dylib */,
 			);
 			path = lib;
+			sourceTree = "<group>";
+		};
+		DBCBFAA324D15D2D004E7369 /* NDIReciver */ = {
+			isa = PBXGroup;
+			children = (
+				DBCBFAA424D15D72004E7369 /* MANDIReciverWindowController.h */,
+				DBCBFAA524D15D72004E7369 /* MANDIReciverWindowController.m */,
+				DBCBFAA624D15D72004E7369 /* MANDIReciverWindowController.xib */,
+			);
+			path = NDIReciver;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,6 +530,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBCBFAA824D15D72004E7369 /* MANDIReciverWindowController.xib in Resources */,
+				DBE1B2B024D02D9900CF89FA /* MASendH264DataWindowController.xib in Resources */,
 				DB3A2F802452FC72009FAEB0 /* MACheckWindowController.xib in Resources */,
 				DB7F08CF2442BFD10052056E /* MAMyPeelVideoWindowController.xib in Resources */,
 				DB16230B243CAF02006B550C /* Assets.xcassets in Resources */,
@@ -518,6 +539,7 @@
 				DB319FC6243F83FE00E94B94 /* test2.mp4 in Resources */,
 				DB319FCF244075D900E94B94 /* MAPeelVideoWindowController.xib in Resources */,
 				DB319FAF243F262400E94B94 /* MAPeelAudioWindowController.xib in Resources */,
+				DBA1D11524D90F7A002B7F19 /* 阳光电影www.ygdy8.com.战争幽灵.BD.1080p.中英双字幕.mp4 in Resources */,
 				DB319FC4243F7F2A00E94B94 /* test.mp4 in Resources */,
 				DB319FA9243F251A00E94B94 /* MAPeelAudioViewController.xib in Resources */,
 				DB8D1ADA24C03770004FDD5A /* MANDIWindowController.xib in Resources */,
@@ -576,6 +598,8 @@
 				DB319FCE244075D900E94B94 /* MAPeelVideoWindowController.m in Sources */,
 				DB3A2F7F2452FC72009FAEB0 /* MACheckWindowController.m in Sources */,
 				DB8D1AD924C03770004FDD5A /* MANDIWindowController.m in Sources */,
+				DBCBFAA724D15D72004E7369 /* MANDIReciverWindowController.m in Sources */,
+				DBE1B2AF24D02D9900CF89FA /* MASendH264DataWindowController.m in Sources */,
 				DB162309243CAF00006B550C /* ViewController.m in Sources */,
 				DB162311243CAF02006B550C /* main.m in Sources */,
 				DB162306243CAF00006B550C /* AppDelegate.m in Sources */,

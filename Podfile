@@ -1,4 +1,8 @@
 
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://git.yy.com/ci_team/Specs.git'
+
+
 inhibit_all_warnings!
 
 target :MacTest do

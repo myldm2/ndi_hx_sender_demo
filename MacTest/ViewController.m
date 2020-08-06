@@ -13,6 +13,7 @@
 #import "MAMyPeelVideoWindowController.h"
 #import "MACheckWindowController.h"
 #import "MANDIWindowController.h"
+#import "MASendH264DataWindowController.h"
 
 @interface ViewController () <NSTableViewDelegate, NSTableViewDataSource>
 
@@ -76,7 +77,7 @@
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    return 5;
+    return 6;
 }
 
 - (nullable id)tableView:(NSTableView *)tableView objectValueForTableColumn:(nullable NSTableColumn *)tableColumn row:(NSInteger)row
@@ -91,8 +92,10 @@
            return @"My Peel Video";
        } else if (row == 3) {
            return @"Check";
-       } else {
+       } else if (row == 4) {
            return @"ndi";
+       } else if (row == 5) {
+           return @"ndi send frame";
        }
     return [NSString stringWithFormat:@"%ld", (long)row];
 }
@@ -123,6 +126,11 @@
         [[MAWindowManager sharedManager] holdWindowController:windowController];
     } else if (row == 4) {
         MANDIWindowController *windowController = [[MANDIWindowController alloc] initWithWindowNibName:@"MANDIWindowController"];
+        [windowController.window center];
+        [windowController.window makeKeyAndOrderFront:nil];
+        [[MAWindowManager sharedManager] holdWindowController:windowController];
+    } else if (row == 5) {
+        MASendH264DataWindowController *windowController = [[MASendH264DataWindowController alloc] initWithWindowNibName:@"MASendH264DataWindowController"];
         [windowController.window center];
         [windowController.window makeKeyAndOrderFront:nil];
         [[MAWindowManager sharedManager] holdWindowController:windowController];

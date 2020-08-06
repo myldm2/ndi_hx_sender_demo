@@ -33,6 +33,7 @@
 @interface MANDIWindowController ()
 
 @property (nonatomic) NDIlib_send_instance_t pSend;
+@property (nonatomic, assign) BOOL start;
 
 @end
 
@@ -52,23 +53,49 @@
         } else {
             printf("Initialized NDIlib");
         }
+        
+        [NSThread sleepForTimeInterval:3];
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            
+            NSString *name = [NSString stringWithFormat:@"My Video %d", rand()];
+//            NSString *name = [NSString stringWithFormat:@"My Video 10"];
+            
+            NDIlib_send_create_t create_params_Send;
+            create_params_Send.p_ndi_name = name.UTF8String;
+            create_params_Send.p_groups = NULL;
+            create_params_Send.clock_video = false;
+            create_params_Send.clock_audio = false;
+            self.pSend = NDIlib_send_create(&create_params_Send);
+            
+            if (!self.pSend) {
+                NSException* myException = [NSException
+                        exceptionWithName:@"FileNotFoundException"
+                        reason:@"Send create failed"
+                        userInfo:nil];
+                @throw myException;
+            } else {
+                printf("Initialized NDI send \n");
+            }
+            
+            [NSThread sleepForTimeInterval:2];
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                
+                //        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"test2" ofType:@"mp4"];
+                        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"阳光电影www.ygdy8.com.战争幽灵.BD.1080p.中英双字幕" ofType:@"mp4"];
+                        [self peelVideo:filePath];
+                        
+                        NDIlib_send_destroy(self.pSend);
+                
+            });
 
-        
-        NDIlib_send_create_t create_params_Send;
-        create_params_Send.p_ndi_name = "My Video 1";
-        create_params_Send.p_groups = NULL;
-        create_params_Send.clock_video = false;
-        create_params_Send.clock_audio = false;
-        self.pSend = NDIlib_send_create(&create_params_Send);
-        
-        NDIlib_send_send_video_scatter(self.pSend, NULL, NULL);
 
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"test2" ofType:@"mp4"];
-        [self peelVideo:filePath];
+            
+        });
         
-        NDIlib_send_send_video_scatter(self.pSend, NULL, NULL);
-        
-        NDIlib_send_destroy(self.pSend);
+
+
     });
     
 }
@@ -99,6 +126,15 @@
 //        buf ++;
         
         int err = 0;
+        
+        NSData *extraData = [[NSData alloc] initWithBytes:fmt_ctx->streams[in->stream_index]->codecpar->extradata length:fmt_ctx->streams[in->stream_index]->codecpar->extradata_size];
+        
+//        Byte *bytes=(Byte*)[extraData bytes];
+//        for(int i=0;i<[extraData length];i++)
+//        {
+//            printf("0x%.2x ", bytes[i]);
+//        }
+//        printf("\n");
         
         AVPacket spspssPkt;
         if (pkt_type == 5)
@@ -132,7 +168,7 @@
             send->dts = in->dts;
             
             
-            [self sendFrameData:send keyFrame:1];
+            [self sendFrameData:send keyFrame:1 extraData:extraData];
             
             av_packet_unref(send);
 
@@ -140,17 +176,17 @@
             
             err = [self copyPacket:out data:buf size:frameDataLength shortHeader:NO];
             if (err < 0) return err;
-            
+
             AVPacket *send = av_packet_alloc();
-            
+
             err = [self copyPacket:send data:buf size:frameDataLength shortHeader:YES];
             if (err < 0) return err;
-            
+
             send->pts = in->pts;
             send->dts = in->dts;
-            
-            [self sendFrameData:send keyFrame:0];
-            
+
+            [self sendFrameData:send keyFrame:0 extraData:nil];
+
             av_packet_unref(send);
             
         } else {
@@ -172,7 +208,7 @@
         }
         fflush(dst_fd);
         
-        [NSThread sleepForTimeInterval:0.01];
+        [NSThread sleepForTimeInterval:0.03];
         
 //        free(out.data);
         
@@ -185,17 +221,24 @@
     return 0;
 }
 
-- (void)sendFrameData:(AVPacket *)framePkt keyFrame:(int)keyframe
+- (void)sendFrameData:(AVPacket *)framePkt keyFrame:(int)keyframe extraData:(NSData*)extraData
 {
+    
+    
+    
     NDIlib_video_frame_v2_t frame;
     frame.FourCC               = (NDIlib_FourCC_video_type_e)NDIlib_FourCC_video_type_ex_H264_highest_bandwidth;
-    frame.xres                 = 1280;
-    frame.yres                 = 720;
+//    frame.xres                 = 1280;
+//    frame.yres                 = 720;
+    frame.xres                 = 1920;
+    frame.yres                 = 1080;
     frame.p_data               = NULL;
     frame.data_size_in_bytes   = 0;
     frame.frame_format_type    = NDIlib_frame_format_type_progressive;
-    frame.picture_aspect_ratio = (float)1280 / (float)720;
-    frame.timecode = framePkt->pts;
+//    frame.picture_aspect_ratio = (float)1280 / (float)720;
+    frame.picture_aspect_ratio = (float)1920 / (float)1080;
+    
+//    frame.timecode = framePkt->pts;
     
     NDIlib_compressed_packet_t packet;
     packet.version         = sizeof(NDIlib_compressed_packet_t);
@@ -208,17 +251,50 @@
     
     AVPacket *send = av_packet_alloc();
     int headerSize = sizeof(NDIlib_compressed_packet_t);
-    av_grow_packet(send, framePkt->size + headerSize);
-    memcpy(send->data, (uint8_t*)&packet, headerSize);
-    memcpy(send->data + headerSize, framePkt->data, framePkt->size);
+    av_grow_packet(send, framePkt->size);
+    memcpy(send->data, framePkt->data, framePkt->size);
     
-    uint8_t* p_data_blocks[2] = {NULL};
-    p_data_blocks[0] = (uint8_t*)(send->data);
-    int p_data_blocks_size[2] = {0};
-    p_data_blocks_size[0] = send->size;
+    uint8_t* p_data_blocks[4] = {NULL};
+    p_data_blocks[0] = (uint8_t*)&packet;
+    p_data_blocks[1] = (uint8_t*)(send->data);
+    p_data_blocks[2] = (uint8_t*)(extraData.bytes);
+    int p_data_blocks_size[4] = {0};
+    p_data_blocks_size[0] = headerSize;
+    p_data_blocks_size[1] = send->size;
+    p_data_blocks_size[2] = (int)extraData.length;
     NDIlib_frame_scatter_t   highQ_scatter = { p_data_blocks,  p_data_blocks_size };
     
-    NDIlib_send_send_video_scatter(self.pSend, &frame, &highQ_scatter);
+    
+    int receiverCount = NDIlib_send_get_no_connections(self.pSend, 0);
+    NDIlib_tally_t ndiTally;
+    bool tallyDone = NDIlib_send_get_tally(self.pSend, &ndiTally, 0);
+    NSLog(@" [sendVideoFrame] Source State Receiver Count %d %@ %@", receiverCount, ndiTally.on_program ? @"PGM" : @"", ndiTally.on_preview ? @"PVM" : @"");
+    if (0 == receiverCount) {
+        NSLog(@" [sendVideoFrame] No Receiver Return");
+        av_packet_unref(send);
+        return;
+    }
+    if (tallyDone) {
+        if (ndiTally.on_program || ndiTally.on_preview) {
+            NSLog(@" [sendVideoFrame] Source Busy Return");
+            av_packet_unref(send);
+            return;
+        }
+    }
+    
+//    if (!(NDIlib_send_is_keyframe_required(self.pSend, &frame) && keyframe == 0))
+//    {
+//        NDIlib_send_send_video_scatter(self.pSend, &frame, &highQ_scatter);
+//        NSLog(@"mayinglun log send keyframe:%d", keyframe);
+//    }
+//    NSLog(@"mayinglun log cc 1:%d", NDIlib_send_wait_for_keyframe_request(self.pSend, 100, NULL));
+//    NSLog(@"mayinglun log cc 2:%d", NDIlib_send_is_keyframe_required(self.pSend, NULL));
+    
+    if (self.start || keyframe == 1)
+    {
+        NDIlib_send_send_video_scatter(self.pSend, &frame, &highQ_scatter);
+        self.start = YES;
+    }
     
     av_packet_unref(send);
 }
